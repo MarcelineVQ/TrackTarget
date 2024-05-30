@@ -1,0 +1,9 @@
+## Interface: 11200
+## Title: TrackTarget
+## Notes: Minimap track whatever you have targeted
+## X-Category: Interface Enhancements
+## X-Date: 2024-05-06
+## X-Website: https://github.com/MarcelineVQ/TrackTarget
+## Version: 1.0
+
+TrackTarget.lua
