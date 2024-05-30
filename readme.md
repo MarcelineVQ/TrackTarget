@@ -1,7 +1,7 @@
 TrackTarget
 ===
 
-Track any friendly you target which is assistable. One that you could used a heal on for instance.
+Track on the minimap any friendly you target which is assistable. One that you could used a heal on for instance.
 ___
 * Requires SuperWoW  
 ___
