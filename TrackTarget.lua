@@ -4,6 +4,32 @@ if not SetAutoloot then
   return
 end
 
+local orig_FriendsFrameFriendButton_OnClick = FriendsFrameFriendButton_OnClick
+-- the playertarget unit doesn't update instantly so exact TargetByName is the best for now
+local function TT_FriendsFrameFriendButton_OnClick(a1)
+  orig_FriendsFrameFriendButton_OnClick(a1)
+  local _,_,friendIndex = string.find(this:GetName(),"FriendsFrameFriendButton(%d+)")
+
+  name, level, class, area, connected, status = GetFriendInfo(tonumber(friendIndex));
+
+  if name and GetZoneText() == area then
+    TargetByName(name,true)
+  end
+end
+FriendsFrameFriendButton_OnClick = TT_FriendsFrameFriendButton_OnClick
+
+local orig_FriendsFrameGuildStatusButton_OnClick = FriendsFrameGuildStatusButton_OnClick
+-- the playertarget unit doesn't update instantly so exact TargetByName is the best for now
+local function TT_FriendsFrameGuildStatusButton_OnClick(a1)
+  orig_FriendsFrameGuildStatusButton_OnClick(a1)
+  name, rank, rankIndex, level, class, zone, note, officernote, online = GetGuildRosterInfo(GetGuildRosterSelection());
+
+  if name and GetZoneText() == zone then
+    TargetByName(name,true)
+  end
+end
+FriendsFrameGuildStatusButton_OnClick = TT_FriendsFrameGuildStatusButton_OnClick
+
 local trackFrame = CreateFrame("Frame")
 local current_target = nil
 trackFrame:RegisterEvent("PLAYER_TARGET_CHANGED")
