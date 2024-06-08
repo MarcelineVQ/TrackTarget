@@ -24,7 +24,7 @@ local function TT_FriendsFrameGuildStatusButton_OnClick(a1)
   orig_FriendsFrameGuildStatusButton_OnClick(a1)
   name, rank, rankIndex, level, class, zone, note, officernote, online = GetGuildRosterInfo(GetGuildRosterSelection());
 
-  if name and GetZoneText() == zone then
+  if name and GetZoneText() == zone and online then
     TargetByName(name,true)
   end
 end
