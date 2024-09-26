@@ -1,4 +1,4 @@
-TrackTarget
+TrackTarget 1.1
 ===
 
 Track on the minimap any friendly you target which is assistable. One that you could used a heal on for instance.  

@@ -4,6 +4,6 @@
 ## X-Category: Interface Enhancements
 ## X-Date: 2024-05-06
 ## X-Website: https://github.com/MarcelineVQ/TrackTarget
-## Version: 1.0
+## Version: 1.1
 
 TrackTarget.lua

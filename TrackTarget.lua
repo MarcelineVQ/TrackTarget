@@ -6,8 +6,8 @@ end
 
 local orig_FriendsFrameFriendButton_OnClick = FriendsFrameFriendButton_OnClick
 -- the playertarget unit doesn't update instantly so exact TargetByName is the best for now
-local function TT_FriendsFrameFriendButton_OnClick(a1)
-  orig_FriendsFrameFriendButton_OnClick(a1)
+local function TT_FriendsFrameFriendButton_OnClick(a1,a2,a3,a4,a5,a6,a7,a8,a9,a10)
+  orig_FriendsFrameFriendButton_OnClick(a1,a2,a3,a4,a5,a6,a7,a8,a9,a10)
   local _,_,friendIndex = string.find(this:GetName(),"FriendsFrameFriendButton(%d+)")
 
   name, level, class, area, connected, status = GetFriendInfo(tonumber(friendIndex));
@@ -20,8 +20,8 @@ FriendsFrameFriendButton_OnClick = TT_FriendsFrameFriendButton_OnClick
 
 local orig_FriendsFrameGuildStatusButton_OnClick = FriendsFrameGuildStatusButton_OnClick
 -- the playertarget unit doesn't update instantly so exact TargetByName is the best for now
-local function TT_FriendsFrameGuildStatusButton_OnClick(a1)
-  orig_FriendsFrameGuildStatusButton_OnClick(a1)
+local function TT_FriendsFrameGuildStatusButton_OnClick(a1,a2,a3,a4,a5,a6,a7,a8,a9,a10)
+  orig_FriendsFrameGuildStatusButton_OnClick(a1,a2,a3,a4,a5,a6,a7,a8,a9,a10)
   name, rank, rankIndex, level, class, zone, note, officernote, online = GetGuildRosterInfo(GetGuildRosterSelection());
 
   if name and GetZoneText() == zone and online then
